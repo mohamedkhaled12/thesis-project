@@ -81,6 +81,11 @@ app.get('/profile', (req, res) =>{
         res.json(null)
     }
     res.json(token)
-})
+});
+
+app.post('/logout', (req, res) =>{
+    //reseting the token to empty in order to logout
+    res.cookie('token','').json(true);
+});
 
 app.listen(4000);
